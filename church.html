@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Church & Faith - Angel Ann D. Ilagan</title>
+    <link rel="stylesheet" href="style.css?v=8">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="logo">PORTFOLIO.</div>
+        <div class="menu-icon" id="menu-icon" onclick="toggleMenu()">☰</div>
+        <nav>
+            <ul id="nav-links">
+                <li class="nav-item"><a href="index.html" class="nav-link">About Me</a></li>
+                <li class="nav-item"><a href="academic.html" class="nav-link">Academic</a></li>
+                <li class="nav-item"><a href="business.html" class="nav-link">Business</a></li>
+                <li class="nav-item"><a href="church.html" class="nav-link active">Church</a></li>
+                <li class="nav-item"><a href="gala.html" class="nav-link">Gala</a></li>
+                <li class="nav-item"><a href="blessings.html" class="nav-link">Blessings</a></li>
+                <li class="nav-item"><a href="instruments.html" class="nav-link">Instruments</a></li>
+                <li class="nav-item"><a href="painting.html" class="nav-link">Painting</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="page-hero">
+        <div class="page-hero-content">
+            <h1 class="page-title">SACRED <span>JOURNEY</span></h1>
+            <div class="title-underline"></div>
+            
+            <p class="narrative-text">
+                O<span>ne</span> of the most profound transformations in my life has been discovering the courage to unleash the voice within my heart, sharing my truest feelings and beliefs with the world around me. I<span>t's</span> been a sacred journey of vulnerability and authenticity, a path that has led me to a deeper understanding of myself and a more profound connection with others. I<span>'ve</span> also been blessed to uncover the boundless joy of using my unique talents to honor Him, whether through the soaring melodies of music, the vibrant expressions of art, or the simple acts of service that ripple outwards with love. K<span>nowing</span> that I can use my gifts to create a positive impact and express my unwavering faith fills my soul with purpose and overflowing gratitude. A<span>nd</span> perhaps the most cherished blessing of all has been the gift of friendships that are truly anointed to the Lord relationships woven from shared values, unwavering mutual support, and a profound connection to something far greater than ourselves. T<span>hese</span> friendships are a constant source of strength, a wellspring of inspiration, and a gentle reminder that I am never truly alone on this extraordinary journey. T<span>ogether,</span> these interwoven threads such as speaking from the depths of my heart, using my talents for the greater good, and cherishing the bonds of anointed friendships, have created a sense of fulfillment and joy that I never dared to imagine. T<span>hese</span> are not just achievements; they are the cornerstones of my being, the guiding lights that continue to shape me into the person I am destined to become.
+            </p>
+        </div>
+    </section>
+
+    <section class="gallery-section">
+        <div class="grand-gallery" style="column-count: 3;">
+            
+            <div class="gallery-item">
+                <div class="gallery-overlay"></div>
+                <img src="./images/church ghorl/56549ac7-812d-4332-8c99-789aa61fbb4a.png" onerror="this.onerror=null; this.src='./images/church ghorl/56549ac7-812d-4332-8c99-789aa61fbb4a.jpg'; this.onerror=function(){this.src='./images/church ghorl/56549ac7-812d-4332-8c99-789aa61fbb4a.jpeg'};" alt="Honoring Him Through Music">
+            </div>
+
+            <div class="gallery-item">
+                <div class="gallery-overlay"></div>
+                <img src="./images/church ghorl/able to share whatz inside me.jpg" onerror="this.onerror=null; this.src='./images/church ghorl/able to share whatz inside me.png'; this.onerror=function(){this.src='./images/church ghorl/able to share whatz inside me.jpeg'};" alt="Sharing My Voice">
+            </div>
+            
+            <div class="gallery-item">
+                <div class="gallery-overlay"></div>
+                <img src="./images/church ghorl/ef1030f6-e8c1-48b9-ae7d-1912250f3f7a.png" onerror="this.onerror=null; this.src='./images/church ghorl/ef1030f6-e8c1-48b9-ae7d-1912250f3f7a.jpg'; this.onerror=function(){this.src='./images/church ghorl/ef1030f6-e8c1-48b9-ae7d-1912250f3f7a.jpeg'};" alt="Sacred Vulnerability">
+            </div>
+
+            <div class="gallery-item">
+                <div class="gallery-overlay"></div>
+                <img src="./images/church ghorl/IMG_20250309_190122_954.jpg" onerror="this.onerror=null; this.src='./images/church ghorl/IMG_20250309_190122_954.jpeg';" alt="Joyful Moments">
+            </div>
+            
+            <div class="gallery-item">
+                <div class="gallery-overlay"></div>
+                <img src="./images/church ghorl/Messenger_creation_C591FA15-573D-4412-9FF7-C6773AEE585D.jpeg" onerror="this.onerror=null; this.src='./images/church ghorl/Messenger_creation_C591FA15-573D-4412-9FF7-C6773AEE585D.jpg';" alt="Anointed Friendships">
+            </div>
+
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-bottom" style="justify-content: center; text-align: center; border-top: 1px solid rgba(56, 191, 167, 0.2); padding-top: 20px; margin-top: 40px;">
+            <p>Angel Ann D. Ilagan © 2026. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Toggle
+        function toggleMenu() {
+            const navLinks = document.getElementById('nav-links');
+            navLinks.classList.toggle('show');
+        }
+
+        // Grand Reveal Animation for Gallery Items
+        document.addEventListener("DOMContentLoaded", () => {
+            const items = document.querySelectorAll('.gallery-item');
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            items.forEach((item, index) => {
+                item.style.opacity = '0';
+                item.style.transform = 'translateY(50px)';
+                item.style.transition = `all 0.8s cubic-bezier(0.25, 1, 0.5, 1) ${index * 0.15}s`;
+                observer.observe(item);
+            });
+        });
+    </script>
+</body>
+</html>

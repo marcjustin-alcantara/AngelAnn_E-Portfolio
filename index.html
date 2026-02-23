@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Angel Ann D. Ilagan - E-Portfolio</title>
+    <link rel="stylesheet" href="style.css?v=21">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="logo">PORTFOLIO.</div>
+        <div class="menu-icon" id="menu-icon" onclick="toggleMenu()">☰</div>
+        <nav>
+            <ul id="nav-links">
+                <li class="nav-item"><a href="index.html" class="nav-link active">About Me</a></li>
+                <li class="nav-item"><a href="academic.html" class="nav-link">Academic</a></li>
+                <li class="nav-item"><a href="business.html" class="nav-link">Business</a></li>
+                <li class="nav-item"><a href="church.html" class="nav-link">Church</a></li>
+                <li class="nav-item"><a href="gala.html" class="nav-link">Gala</a></li>
+                <li class="nav-item"><a href="blessings.html" class="nav-link">Blessings</a></li>
+                <li class="nav-item"><a href="instruments.html" class="nav-link">Instruments</a></li>
+                <li class="nav-item"><a href="painting.html" class="nav-link">Painting</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero-section">
+        <div class="hero-image-container">
+            <div class="blob-shape"></div>
+            <img src="./images/mainpic.png" onerror="this.onerror=null; this.src='./images/mainpic.jpg';" alt="Angel Ann D. Ilagan" class="hero-img">
+        </div>
+
+        <div class="hero-text-container">
+            <h3 class="greeting">Hello! Mabuhay!</h3>
+            <h1>I'M ANGEL ANN ILAGAN</h1>
+            <h2>And I'm guided by <span id="typing-text" class="profession"></span><span class="cursor">|</span></h2>
+            
+            <p class="hero-description">
+                A<span>t</span> 20 years old, I strive to live a life guided by hard work, a sensitive heart, and a deep compassion for others. I find joy in giving what I can, prioritizing the needs of those around me. Driven to achieve to repay my parents' countless sacrifices, I place my hope and trust in His guidance as I navigate the path ahead.
+            </p>
+
+            <div class="hero-buttons">
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+                <a href="#journey" class="download-btn">Explore Journey</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="services-section" id="journey">
+        <h2>My Journey</h2>
+        <p class="section-p">Welcome to my e-portfolio. Below are the different milestones, passions, and experiences that weave together the tapestry of my life.</p>
+        
+        <div class="services-container">
+            <div class="service-card" onclick="window.location.href='academic.html'">
+                <div class="service-icon"><i class="fas fa-graduation-cap"></i></div>
+                <div class="service-info">
+                    <h3>Academic</h3>
+                    <p>Milestones and efforts reflecting my dedication, striving to do my best while navigating life.</p>
+                </div>
+            </div>
+            
+            <div class="service-card" onclick="window.location.href='business.html'">
+                <div class="service-icon"><i class="fas fa-store"></i></div>
+                <div class="service-info">
+                    <h3>Business</h3>
+                    <p>Invaluable lessons learned from flower making, selling keychains, tutoring, and working at Mac Foods.</p>
+                </div>
+            </div>
+            
+            <div class="service-card" onclick="window.location.href='church.html'">
+                <div class="service-icon"><i class="fas fa-church"></i></div>
+                <div class="service-info">
+                    <h3>Church</h3>
+                    <p>A sacred journey of vulnerability, authenticity, and using my unique talents to honor Him.</p>
+                </div>
+            </div>
+
+            <div class="service-card" onclick="window.location.href='gala.html'">
+                <div class="service-icon"><i class="fas fa-city"></i></div>
+                <div class="service-info">
+                    <h3>Gala at BGC</h3>
+                    <p>Wandering through the city lights, releasing stress, and finding a sense of belonging with my family.</p>
+                </div>
+            </div>
+
+            <div class="service-card" onclick="window.location.href='blessings.html'">
+                <div class="service-icon"><i class="fas fa-gift"></i></div>
+                <div class="service-info">
+                    <h3>Giving Blessings</h3>
+                    <p>Sharing simple gifts in Taal with my brother Zaimon, offered with a pure heart of gratitude.</p>
+                </div>
+            </div>
+
+            <div class="service-card" onclick="window.location.href='instruments.html'">
+                <div class="service-icon"><i class="fas fa-guitar"></i></div>
+                <div class="service-info">
+                    <h3>Instruments</h3>
+                    <p>Finding solace and joy through the guitar, piano, and the drums I worked hard to achieve on my own.</p>
+                </div>
+            </div>
+
+            <div class="service-card" onclick="window.location.href='painting.html'">
+                <div class="service-icon"><i class="fas fa-palette"></i></div>
+                <div class="service-info">
+                    <h3>Painting</h3>
+                    <p>A deeply personal journey where creating art became a lifeline to navigate difficult emotions.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-bottom" style="justify-content: center; text-align: center; border-top: 1px solid rgba(56, 191, 167, 0.2); padding-top: 20px; margin-top: 40px;">
+            <p>Angel Ann D. Ilagan © 2026. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Toggle
+        function toggleMenu() {
+            const navLinks = document.getElementById('nav-links');
+            navLinks.classList.toggle('show');
+        }
+
+        // Typing Effect
+        const words = ["Compassion.", "Hard Work.", "Grace."];
+        let wordIndex = 0;
+        let charIndex = 0;
+        let isDeleting = false;
+        const typingText = document.getElementById("typing-text");
+
+        function type() {
+            const currentWord = words[wordIndex];
+            if (!isDeleting) {
+                typingText.textContent = currentWord.slice(0, charIndex + 1);
+                charIndex++;
+                if (charIndex === currentWord.length) {
+                    isDeleting = true;
+                    setTimeout(type, 1500); 
+                    return;
+                }
+            } else {
+                typingText.textContent = currentWord.slice(0, charIndex - 1);
+                charIndex--;
+                if (charIndex === 0) {
+                    isDeleting = false;
+                    wordIndex = (wordIndex + 1) % words.length;
+                }
+            }
+            setTimeout(type, isDeleting ? 50 : 100);
+        }
+        document.addEventListener("DOMContentLoaded", () => {
+            setTimeout(type, 500);
+        });
+    </script>
+</body>
+</html>

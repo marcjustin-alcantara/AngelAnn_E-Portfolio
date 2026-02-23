@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Business Ventures - Angel Ann D. Ilagan</title>
+    <link rel="stylesheet" href="style.css?v=6">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="logo">PORTFOLIO.</div>
+        <div class="menu-icon" id="menu-icon" onclick="toggleMenu()">☰</div>
+        <nav>
+            <ul id="nav-links">
+                <li class="nav-item"><a href="index.html" class="nav-link">About Me</a></li>
+                <li class="nav-item"><a href="academic.html" class="nav-link">Academic</a></li>
+                <li class="nav-item"><a href="business.html" class="nav-link active">Business</a></li>
+                <li class="nav-item"><a href="church.html" class="nav-link">Church</a></li>
+                <li class="nav-item"><a href="gala.html" class="nav-link">Gala</a></li>
+                <li class="nav-item"><a href="blessings.html" class="nav-link">Blessings</a></li>
+                <li class="nav-item"><a href="instruments.html" class="nav-link">Instruments</a></li>
+                <li class="nav-item"><a href="painting.html" class="nav-link">Painting</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="page-hero">
+        <div class="page-hero-content">
+            <h1 class="page-title">BUSINESS <span>VENTURES</span></h1>
+            <div class="title-underline"></div>
+            
+            <p class="narrative-text">
+                B<span>eyond</span> the classroom, my heart has led me to explore different paths, each one teaching me invaluable lessons. S<span>ince</span> 2025, the delicate art of flower making has blossomed into a small business, nurturing my creativity and resourcefulness. S<span>elling</span> keychains has become a joyful way to connect with others, sharing little pieces of happiness. T<span>utoring</span> a young student has filled me with a sense of purpose, witnessing their growth and understanding. E<span>ven</span> my time as a 'tindera' at Mac Foods, though challenging, has opened my eyes to the world beyond school, fostering resilience and empathy. E<span>ach</span> of these experiences, though diverse, has woven together a tapestry of growth, preparing me for the future with a deeper understanding of myself and the world around me.
+            </p>
+        </div>
+    </section>
+
+    <section class="gallery-section">
+        <div class="grand-gallery">
+            <div class="gallery-item">
+                <div class="gallery-overlay"></div>
+                <img src="./images/business/angelannflower.jpg" onerror="this.onerror=null; this.src='./images/business/angelannflower.jpeg';" alt="Flower Making 1">
+            </div>
+            
+            <div class="gallery-item">
+                <div class="gallery-overlay"></div>
+                <img src="./images/business/keychain.jpg" onerror="this.onerror=null; this.src='./images/business/keychain.png';" alt="Keychains">
+            </div>
+            
+            <div class="gallery-item">
+                <div class="gallery-overlay"></div>
+                <img src="./images/business/Messenger_creation_9C04AF27-1866-4FAE-88C7-9B04734BB965.jpeg" onerror="this.onerror=null; this.src='./images/business/Messenger_creation_9C04AF27-1866-4FAE-88C7-9B04734BB965.jpg';" alt="Flower Bouquet Collection 1">
+            </div>
+            
+            <div class="gallery-item">
+                <div class="gallery-overlay"></div>
+                <img src="./images/business/Messenger_creation_B4D23637-22B1-41EF-830F-3F488E586595.jpeg" onerror="this.onerror=null; this.src='./images/business/Messenger_creation_B4D23637-22B1-41EF-830F-3F488E586595.jpg';" alt="Flower Bouquet Collection 2">
+            </div>
+            
+            <div class="gallery-item">
+                <div class="gallery-overlay"></div>
+                <img src="./images/business/Messenger_creation_D5DC261E-77B3-48F6-8BC4-9B75C52B6836.jpeg" onerror="this.onerror=null; this.src='./images/business/Messenger_creation_D5DC261E-77B3-48F6-8BC4-9B75C52B6836.jpg';" alt="Flower Bouquet Collection 3">
+            </div>
+            
+            <div class="gallery-item">
+                <div class="gallery-overlay"></div>
+                <img src="./images/business/naging tindera me here.jpg" onerror="this.onerror=null; this.src='./images/business/naging tindera me here.png';" alt="Tindera at Mac Foods">
+            </div>
+            
+            <div class="gallery-item">
+                <div class="gallery-overlay"></div>
+                <img src="./images/business/turoring.jpg" onerror="this.onerror=null; this.src='./images/business/turoring.png';" alt="Tutoring a Student">
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-bottom" style="justify-content: center; text-align: center; border-top: 1px solid rgba(56, 191, 167, 0.2); padding-top: 20px; margin-top: 40px;">
+            <p>Angel Ann D. Ilagan © 2026. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Toggle
+        function toggleMenu() {
+            const navLinks = document.getElementById('nav-links');
+            navLinks.classList.toggle('show');
+        }
+
+        // Grand Reveal Animation for Gallery Items
+        document.addEventListener("DOMContentLoaded", () => {
+            const items = document.querySelectorAll('.gallery-item');
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            items.forEach((item, index) => {
+                item.style.opacity = '0';
+                item.style.transform = 'translateY(50px)';
+                item.style.transition = `all 0.8s cubic-bezier(0.25, 1, 0.5, 1) ${index * 0.1}s`;
+                observer.observe(item);
+            });
+        });
+    </script>
+</body>
+</html>

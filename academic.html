@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Academic Excellence - Angel Ann D. Ilagan</title>
+    <link rel="stylesheet" href="style.css?v=3">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="logo">PORTFOLIO.</div>
+        <div class="menu-icon" id="menu-icon" onclick="toggleMenu()">☰</div>
+        <nav>
+            <ul id="nav-links">
+                <li class="nav-item"><a href="index.html" class="nav-link">About Me</a></li>
+                <li class="nav-item"><a href="academic.html" class="nav-link active">Academic</a></li>
+                <li class="nav-item"><a href="business.html" class="nav-link">Business</a></li>
+                <li class="nav-item"><a href="church.html" class="nav-link">Church</a></li>
+                <li class="nav-item"><a href="gala.html" class="nav-link">Gala</a></li>
+                <li class="nav-item"><a href="blessings.html" class="nav-link">Blessings</a></li>
+                <li class="nav-item"><a href="instruments.html" class="nav-link">Instruments</a></li>
+                <li class="nav-item"><a href="painting.html" class="nav-link">Painting</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="page-hero">
+        <div class="page-hero-content">
+            <h1 class="page-title">ACADEMIC <span>JOURNEY</span></h1>
+            <div class="title-underline"></div>
+            
+            <p class="narrative-text">
+                Throughout my school years, I've accumulated some medals and certificates, not because I'm exceptionally gifted, but because I've always strived to do my best but chilling at the same time. These aren't symbols of brilliance, but rather reminders of the hard work and dedication I've invested. Like any other kid, I'm navigating life, hoping for a normal future, and these accomplishments are simply milestones along the way, each representing a bit of effort and a step forward.
+            </p>
+        </div>
+    </section>
+
+    <section class="gallery-section">
+        <div class="grand-gallery">
+            <div class="gallery-item">
+                <div class="gallery-overlay"></div>
+                <img src="./images/achievementz sa schoolnessizeses/IMG_20240616_070659_033.jpg" alt="Academic Achievement 1">
+            </div>
+            
+            <div class="gallery-item">
+                <div class="gallery-overlay"></div>
+                <img src="./images/achievementz sa schoolnessizeses/IMG_20241029_141621_619.jpg" alt="Academic Achievement 2">
+            </div>
+            
+            <div class="gallery-item">
+                <div class="gallery-overlay"></div>
+                <img src="./images/achievementz sa schoolnessizeses/IMG_20260221_212431.jpg" alt="Wall of Medals">
+            </div>
+            
+            <div class="gallery-item">
+                <div class="gallery-overlay"></div>
+                <img src="./images/achievementz sa schoolnessizeses/Messenger_creation_C02B738A-EE97-4F79-987B-549E51361511.jpeg" alt="Receiving Certificate">
+            </div>
+            
+            <div class="gallery-item">
+                <div class="gallery-overlay"></div>
+                <img src="./images/achievementz sa schoolnessizeses/Messenger_creation_DA96FC1A-D41A-4920-9C3D-C6ACC4E0AB35.jpeg" alt="Certificates and Medals">
+            </div>
+            
+            <div class="gallery-item tall">
+                <div class="gallery-overlay"></div>
+                <img src="./images/achievementz sa schoolnessizeses/Screenshot_20260221-211125.png" alt="Academic Achievement 6">
+            </div>
+            
+            <div class="gallery-item tall">
+                <div class="gallery-overlay"></div>
+                <img src="./images/achievementz sa schoolnessizeses/Screenshot_20260221-211147.png" alt="Academic Achievement 7">
+            </div>
+            
+            <div class="gallery-item tall">
+                <div class="gallery-overlay"></div>
+                <img src="./images/achievementz sa schoolnessizeses/Screenshot_20260221-211359.png" alt="Academic Achievement 8">
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-bottom" style="justify-content: center; text-align: center; border-top: 1px solid rgba(56, 191, 167, 0.2); padding-top: 20px; margin-top: 40px;">
+            <p>Angel Ann D. Ilagan © 2026. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Toggle
+        function toggleMenu() {
+            const navLinks = document.getElementById('nav-links');
+            navLinks.classList.toggle('show');
+        }
+
+        // Grand Reveal Animation for Gallery Items
+        document.addEventListener("DOMContentLoaded", () => {
+            const items = document.querySelectorAll('.gallery-item');
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            items.forEach((item, index) => {
+                item.style.opacity = '0';
+                item.style.transform = 'translateY(50px)';
+                item.style.transition = `all 0.8s cubic-bezier(0.25, 1, 0.5, 1) ${index * 0.1}s`;
+                observer.observe(item);
+            });
+        });
+    </script>
+</body>
+</html>
