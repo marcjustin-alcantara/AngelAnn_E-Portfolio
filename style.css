@@ -284,8 +284,8 @@ nav ul li button:hover {
 }
 
 .service-card {
-    flex: 1 1 300px; 
-    max-width: 320px; 
+    flex: 1 1 300px;
+    max-width: 320px;
     background-color: var(--bg-card);
     padding: 40px 20px;
     border-radius: 10px;
@@ -384,12 +384,12 @@ nav ul li button:hover {
     border: 1px solid rgba(56, 191, 167, 0.15);
     cursor: pointer;
     break-inside: avoid;
-    margin-bottom: 30px; 
+    margin-bottom: 30px;
 }
 
 .gallery-item img, .gallery-item video {
     width: 100%;
-    height: auto; 
+    height: auto;
     display: block;
     transition: transform 0.8s cubic-bezier(0.25, 1, 0.5, 1), filter 0.8s ease;
     filter: grayscale(10%) brightness(0.9);
@@ -439,7 +439,7 @@ nav ul li button:hover {
 .centered-flex-gallery .gallery-item {
     flex: 0 1 360px;
     width: 100%;
-    margin-bottom: 0; 
+    margin-bottom: 0;
 }
 
 /* --- THE CINEMATIC WIDESCREEN BANNER EDGE-TO-EDGE OVERRIDE --- */
@@ -487,7 +487,7 @@ nav ul li button:hover {
 }
 
 .uniform-portrait-item {
-    flex: 0 1 320px; 
+    flex: 0 1 320px;
     width: 100%;
     border-radius: 15px;
     overflow: hidden;
@@ -495,7 +495,7 @@ nav ul li button:hover {
     box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6);
     background-color: #000;
     transition: 0.3s;
-    aspect-ratio: 9 / 16; 
+    aspect-ratio: 9 / 16;
     position: relative;
     cursor: pointer;
 }
@@ -503,7 +503,7 @@ nav ul li button:hover {
 .uniform-portrait-item video, .uniform-portrait-item img {
     width: 100%;
     height: 100%;
-    object-fit: cover; 
+    object-fit: cover;
     display: block;
     filter: grayscale(10%) brightness(0.9);
     transition: transform 0.8s cubic-bezier(0.25, 1, 0.5, 1), filter 0.8s ease;
@@ -550,7 +550,7 @@ nav ul li button:hover {
 .side-by-side-item video, .side-by-side-item img {
     width: 100%;
     height: 100%;
-    object-fit: cover; 
+    object-fit: cover;
     display: block;
     filter: grayscale(15%) brightness(0.9);
     transition: transform 0.8s cubic-bezier(0.25, 1, 0.5, 1), filter 0.8s ease;
@@ -572,7 +572,7 @@ nav ul li button:hover {
         grid-template-columns: repeat(2, 1fr);
     }
     .grand-gallery {
-        column-count: 3 !important; 
+        column-count: 3 !important;
     }
     .hero-section {
         flex-direction: column;
@@ -620,7 +620,7 @@ nav ul li button:hover {
         grid-template-columns: 1fr;
     }
     .grand-gallery {
-        column-count: 2 !important; 
+        column-count: 2 !important;
     }
     .hero-text-container h1 {
         font-size: 40px;
@@ -645,9 +645,9 @@ nav ul li button:hover {
 
 @media (max-width: 480px) {
     .grand-gallery {
-        column-count: 1 !important; 
+        column-count: 1 !important;
     }
     .uniform-portrait-item, .centered-flex-gallery .gallery-item {
-        flex: 0 1 100%; 
+        flex: 0 1 100%;
     }
 }

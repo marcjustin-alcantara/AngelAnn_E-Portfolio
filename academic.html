@@ -4,115 +4,247 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Academic Excellence - Angel Ann D. Ilagan</title>
-    <link rel="stylesheet" href="style.css?v=3">
+    <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-</head>
-<body>
-    <header>
-        <div class="logo">PORTFOLIO.</div>
-        <div class="menu-icon" id="menu-icon" onclick="toggleMenu()">☰</div>
-        <nav>
-            <ul id="nav-links">
-                <li class="nav-item"><a href="index.html" class="nav-link">About Me</a></li>
-                <li class="nav-item"><a href="academic.html" class="nav-link active">Academic</a></li>
-                <li class="nav-item"><a href="business.html" class="nav-link">Business</a></li>
-                <li class="nav-item"><a href="church.html" class="nav-link">Church</a></li>
-                <li class="nav-item"><a href="gala.html" class="nav-link">Gala</a></li>
-                <li class="nav-item"><a href="blessings.html" class="nav-link">Blessings</a></li>
-                <li class="nav-item"><a href="instruments.html" class="nav-link">Instruments</a></li>
-                <li class="nav-item"><a href="painting.html" class="nav-link">Painting</a></li>
-            </ul>
-        </nav>
-    </header>
 
-    <section class="page-hero">
-        <div class="page-hero-content">
-            <h1 class="page-title">ACADEMIC <span>JOURNEY</span></h1>
-            <div class="title-underline"></div>
-            
-            <p class="narrative-text">
-                Throughout my school years, I've accumulated some medals and certificates, not because I'm exceptionally gifted, but because I've always strived to do my best but chilling at the same time. These aren't symbols of brilliance, but rather reminders of the hard work and dedication I've invested. Like any other kid, I'm navigating life, hoping for a normal future, and these accomplishments are simply milestones along the way, each representing a bit of effort and a step forward.
-            </p>
-        </div>
-    </section>
-
-    <section class="gallery-section">
-        <div class="grand-gallery">
-            <div class="gallery-item">
-                <div class="gallery-overlay"></div>
-                <img src="./images/achievementz sa schoolnessizeses/IMG_20240616_070659_033.jpg" alt="Academic Achievement 1">
-            </div>
-            
-            <div class="gallery-item">
-                <div class="gallery-overlay"></div>
-                <img src="./images/achievementz sa schoolnessizeses/IMG_20241029_141621_619.jpg" alt="Academic Achievement 2">
-            </div>
-            
-            <div class="gallery-item">
-                <div class="gallery-overlay"></div>
-                <img src="./images/achievementz sa schoolnessizeses/IMG_20260221_212431.jpg" alt="Wall of Medals">
-            </div>
-            
-            <div class="gallery-item">
-                <div class="gallery-overlay"></div>
-                <img src="./images/achievementz sa schoolnessizeses/Messenger_creation_C02B738A-EE97-4F79-987B-549E51361511.jpeg" alt="Receiving Certificate">
-            </div>
-            
-            <div class="gallery-item">
-                <div class="gallery-overlay"></div>
-                <img src="./images/achievementz sa schoolnessizeses/Messenger_creation_DA96FC1A-D41A-4920-9C3D-C6ACC4E0AB35.jpeg" alt="Certificates and Medals">
-            </div>
-            
-            <div class="gallery-item tall">
-                <div class="gallery-overlay"></div>
-                <img src="./images/achievementz sa schoolnessizeses/Screenshot_20260221-211125.png" alt="Academic Achievement 6">
-            </div>
-            
-            <div class="gallery-item tall">
-                <div class="gallery-overlay"></div>
-                <img src="./images/achievementz sa schoolnessizeses/Screenshot_20260221-211147.png" alt="Academic Achievement 7">
-            </div>
-            
-            <div class="gallery-item tall">
-                <div class="gallery-overlay"></div>
-                <img src="./images/achievementz sa schoolnessizeses/Screenshot_20260221-211359.png" alt="Academic Achievement 8">
-            </div>
-        </div>
-    </section>
-
-    <footer>
-        <div class="footer-bottom" style="justify-content: center; text-align: center; border-top: 1px solid rgba(56, 191, 167, 0.2); padding-top: 20px; margin-top: 40px;">
-            <p>Angel Ann D. Ilagan © 2026. All rights reserved.</p>
-        </div>
-    </footer>
-
-    <script>
-        // Mobile Menu Toggle
-        function toggleMenu() {
-            const navLinks = document.getElementById('nav-links');
-            navLinks.classList.toggle('show');
+    <style>
+        .academic-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 5%;
         }
 
-        // Grand Reveal Animation for Gallery Items
-        document.addEventListener("DOMContentLoaded", () => {
-            const items = document.querySelectorAll('.gallery-item');
-            
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.style.opacity = '1';
-                        entry.target.style.transform = 'translateY(0)';
-                    }
-                });
-            }, { threshold: 0.1 });
+        .story-block {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+            margin-bottom: 100px;
+            opacity: 0; /* For JS animation */
+        }
 
-            items.forEach((item, index) => {
-                item.style.opacity = '0';
-                item.style.transform = 'translateY(50px)';
-                item.style.transition = `all 0.8s cubic-bezier(0.25, 1, 0.5, 1) ${index * 0.1}s`;
-                observer.observe(item);
+        /* Alternating reverse layout for even items */
+        .story-block:nth-child(even) {
+            flex-direction: row-reverse;
+        }
+
+        .story-text {
+            flex: 1;
+            background: var(--bg-card);
+            padding: 40px;
+            border-radius: 20px;
+            border-left: 4px solid var(--accent);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            transition: transform 0.5s ease;
+        }
+
+        .story-block:nth-child(even) .story-text {
+            border-left: none;
+            border-right: 4px solid var(--accent);
+        }
+
+        .story-text:hover {
+            transform: translateY(-5px);
+        }
+
+        .story-text h2 {
+            font-size: 32px;
+            color: var(--text-main);
+            margin-bottom: 15px;
+        }
+
+        .story-text h2 span {
+            color: var(--accent);
+            font-size: 20px;
+            display: block;
+            margin-top: 5px;
+            font-style: italic;
+            font-weight: 400;
+        }
+
+        .story-text p {
+            color: var(--text-muted);
+            line-height: 1.8;
+            font-size: 16px;
+            text-align: justify;
+        }
+
+        .story-media {
+            flex: 1.2;
+            display: grid;
+            gap: 15px;
+        }
+
+        /* Dynamic Grids based on number of images */
+        .grid-1 { grid-template-columns: 1fr; }
+        .grid-2 { grid-template-columns: repeat(2, 1fr); }
+        .grid-4 { grid-template-columns: repeat(2, 1fr); }
+
+        .media-item {
+            position: relative;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.4);
+        }
+
+        .media-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.5s ease, filter 0.5s ease;
+            filter: grayscale(10%); /* Softened the grayscale so your pics pop more */
+        }
+
+        .media-item:hover img {
+            transform: scale(1.05);
+            filter: grayscale(0%);
+        }
+
+        /* Responsive Design for Mobile */
+        @media (max-width: 900px) {
+            .story-block, .story-block:nth-child(even) {
+                flex-direction: column;
+                gap: 30px;
+                margin-bottom: 70px;
+            }
+            .story-text {
+                border-left: 4px solid var(--accent) !important;
+                border-right: none !important;
+            }
+        }
+    </style>
+</head>
+<body>
+<header>
+    <div class="logo">PORTFOLIO.</div>
+    <div class="menu-icon" id="menu-icon" onclick="toggleMenu()">☰</div>
+    <nav>
+        <ul id="nav-links">
+            <li class="nav-item"><a href="index.html" class="nav-link">About Me</a></li>
+            <li class="nav-item"><a href="academic.html" class="nav-link active">Academic</a></li>
+            <li class="nav-item"><a href="business.html" class="nav-link">Business</a></li>
+            <li class="nav-item"><a href="church.html" class="nav-link">Church</a></li>
+            <li class="nav-item"><a href="gala.html" class="nav-link">Gala</a></li>
+            <li class="nav-item"><a href="blessings.html" class="nav-link">Blessings</a></li>
+            <li class="nav-item"><a href="instruments.html" class="nav-link">Instruments</a></li>
+            <li class="nav-item"><a href="painting.html" class="nav-link">Painting</a></li>
+        </ul>
+    </nav>
+</header>
+
+<section class="page-hero" style="padding-bottom: 40px;">
+    <div class="page-hero-content">
+        <h1 class="page-title">ACADEMIC <span>JOURNEY</span></h1>
+        <div class="title-underline"></div>
+        <p class="narrative-text" style="text-align: center;">
+            An exhibition of growth, resilience, and the milestones that defined my path.
+        </p>
+    </div>
+</section>
+
+<section class="academic-container">
+
+    <div class="story-block">
+        <div class="story-text slide-left">
+            <h2>The Foundation <span>(Grade 3)</span></h2>
+            <p>Standing on that stage in Grade 3 remains one of my most cherished early memories. Receiving that achievement wasn't just about the certificate; it was about the profound pride shining in my father's eyes as he walked up to take it with me. Having him there, sharing that exact moment, made the milestone feel like a shared victory—a quiet, powerful promise that my hard work would always be supported and celebrated by the people who love me.</p>
+        </div>
+        <div class="story-media grid-1 slide-right">
+            <div class="media-item">
+                <img src="./images/achievementz sa schoolnessizeses/Messenger_creation_C02B738A-EE97-4F79-987B-549E51361511.jpeg" alt="Grade 3 Achievement">
+            </div>
+        </div>
+    </div>
+
+    <div class="story-block">
+        <div class="story-text slide-right">
+            <h2>The Investment <span>(Grade 12)</span></h2>
+            <p>Grade 12 culminated in a moment of absolute validation. Earning those two medals—one for graduating With High Honor, and the other for my dedicated service in the Supreme Student Government—wasn't merely a guarantee of my academic capability; it was the tangible, physical payoff of a deeply personal investment. It proved that the late nights, the sacrifices, and the relentless drive were all worth it. Those medals stand as proof that when you invest in your own potential, the returns will always manifest.</p>
+        </div>
+        <div class="story-media grid-1 slide-left">
+            <div class="media-item">
+                <img src="./images/achievementz sa schoolnessizeses/IMG_20240616_070659_033.jpg" alt="Senior High Medals">
+            </div>
+        </div>
+    </div>
+
+    <div class="story-block">
+        <div class="story-text slide-left">
+            <h2>The Flow <span>(College Era)</span></h2>
+            <p>Now, navigating my college days at Rizal College of Taal, the journey has taken on a completely different rhythm. Being included in the Dean's Lister is a tremendous honor, but my approach has evolved. I am no longer forcing the current—I am going with the flow. I've learned how to balance the hustle with peace, embracing a chill mindset while continuing to move forward and secure my future.</p>
+        </div>
+        <div class="story-media grid-4 slide-right">
+            <div class="media-item"><img src="./images/achievementz sa schoolnessizeses/Screenshot_20260221-211125.png" alt="College Moment 1"></div>
+            <div class="media-item"><img src="./images/achievementz sa schoolnessizeses/Screenshot_20260221-211147.png" alt="College Moment 2"></div>
+            <div class="media-item"><img src="./images/achievementz sa schoolnessizeses/Screenshot_20260221-211359.png" alt="College Moment 3"></div>
+            <div class="media-item"><img src="./images/achievementz sa schoolnessizeses/IMG_20241029_141621_619.jpg" alt="College Moment 4"></div>
+        </div>
+    </div>
+
+    <div class="story-block">
+        <div class="story-text slide-right">
+            <h2>The Overall <span>Journey</span></h2>
+            <p>Throughout my school years, I've accumulated some medals and certificates, not because I'm exceptionally gifted, but because I've always strived to do my best but chilling at the same time. These aren't symbols of brilliance, but rather reminders of the hard work and dedication I've invested. Like any other kid, I'm navigating life, hoping for a normal future, and these accomplishments are simply milestones along the way, each representing a bit of effort and a step forward.</p>
+        </div>
+        <div class="story-media grid-2 slide-left">
+            <div class="media-item"><img src="./images/achievementz sa schoolnessizeses/IMG_20260221_212431.jpg" alt="Overall Medals"></div>
+            <div class="media-item"><img src="./images/achievementz sa schoolnessizeses/Messenger_creation_DA96FC1A-D41A-4920-9C3D-C6ACC4E0AB35.jpeg" alt="Overall Certificates"></div>
+        </div>
+    </div>
+
+</section>
+
+<footer>
+    <div class="footer-bottom" style="justify-content: center; text-align: center; border-top: 1px solid rgba(56, 191, 167, 0.2); padding-top: 20px; margin-top: 40px;">
+        <p>Angel Ann D. Ilagan © 2026. All rights reserved.</p>
+    </div>
+</footer>
+
+<script>
+    // Mobile Menu Toggle
+    function toggleMenu() {
+        const navLinks = document.getElementById('nav-links');
+        navLinks.classList.toggle('show');
+    }
+
+    // Custom Sliding Animation for Story Blocks
+    document.addEventListener("DOMContentLoaded", () => {
+        const blocks = document.querySelectorAll('.story-block');
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+
+                    // Slide text and media toward the center
+                    const slideLeftElements = entry.target.querySelectorAll('.slide-left');
+                    const slideRightElements = entry.target.querySelectorAll('.slide-right');
+
+                    slideLeftElements.forEach(el => el.style.transform = 'translateX(0)');
+                    slideRightElements.forEach(el => el.style.transform = 'translateX(0)');
+                }
             });
+        }, { threshold: 0.2 });
+
+        blocks.forEach((block) => {
+            // Initial setup for the slide effect
+            const slideLeftElements = block.querySelectorAll('.slide-left');
+            const slideRightElements = block.querySelectorAll('.slide-right');
+
+            slideLeftElements.forEach(el => {
+                el.style.transform = 'translateX(-50px)';
+                el.style.transition = 'transform 0.8s cubic-bezier(0.25, 1, 0.5, 1)';
+            });
+
+            slideRightElements.forEach(el => {
+                el.style.transform = 'translateX(50px)';
+                el.style.transition = 'transform 0.8s cubic-bezier(0.25, 1, 0.5, 1)';
+            });
+
+            block.style.transition = 'opacity 0.8s ease-in-out';
+            observer.observe(block);
         });
-    </script>
+    });
+</script>
 </body>
 </html>
