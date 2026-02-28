@@ -9,7 +9,7 @@
 
     <style>
         .academic-container {
-            max-width: 1200px;
+            max-width: 1450px; /* Upgraded premium container width */
             margin: 0 auto;
             padding: 40px 5%;
         }
@@ -28,7 +28,7 @@
         }
 
         .story-text {
-            flex: 1;
+            flex: 1.2; /* Beautifully balanced text width */
             background: var(--bg-card);
             padding: 40px;
             border-radius: 20px;
@@ -50,6 +50,7 @@
             font-size: 32px;
             color: var(--text-main);
             margin-bottom: 15px;
+            line-height: 1.2;
         }
 
         .story-text h2 span {
@@ -69,13 +70,14 @@
         }
 
         .story-media {
-            flex: 1.2;
+            flex: 1.5; /* Balanced media size */
             display: grid;
             gap: 15px;
+            justify-content: center;
         }
 
         /* Dynamic Grids based on number of images */
-        .grid-1 { grid-template-columns: 1fr; }
+        .grid-1 { grid-template-columns: 1fr; max-width: 450px; width: 100%; } /* Prevents single images from becoming giants */
         .grid-2 { grid-template-columns: repeat(2, 1fr); }
         .grid-4 { grid-template-columns: repeat(2, 1fr); }
 
@@ -84,6 +86,8 @@
             border-radius: 15px;
             overflow: hidden;
             box-shadow: 0 10px 20px rgba(0,0,0,0.4);
+            aspect-ratio: 4 / 5; /* Consistent portrait look */
+            background-color: #000;
         }
 
         .media-item img {
@@ -92,7 +96,14 @@
             object-fit: cover;
             display: block;
             transition: transform 0.5s ease, filter 0.5s ease;
-            filter: grayscale(10%); /* Softened the grayscale so your pics pop more */
+            filter: grayscale(10%);
+        }
+
+        /* THE FIX: Special class to show the entire image without ANY cropping */
+        .media-item.uncropped img {
+            object-fit: contain;
+            background-color: var(--bg-card); /* Blends the empty space beautifully */
+            filter: grayscale(0%); /* Lets the medals shine in full color instantly */
         }
 
         .media-item:hover img {
@@ -101,11 +112,14 @@
         }
 
         /* Responsive Design for Mobile */
-        @media (max-width: 900px) {
+        @media (max-width: 1100px) {
             .story-block, .story-block:nth-child(even) {
                 flex-direction: column;
-                gap: 30px;
-                margin-bottom: 70px;
+                gap: 40px;
+                margin-bottom: 80px;
+            }
+            .story-media {
+                width: 100%;
             }
             .story-text {
                 border-left: 4px solid var(--accent) !important;
@@ -187,8 +201,8 @@
             <p>Throughout my school years, I've accumulated some medals and certificates, not because I'm exceptionally gifted, but because I've always strived to do my best but chilling at the same time. These aren't symbols of brilliance, but rather reminders of the hard work and dedication I've invested. Like any other kid, I'm navigating life, hoping for a normal future, and these accomplishments are simply milestones along the way, each representing a bit of effort and a step forward.</p>
         </div>
         <div class="story-media grid-2 slide-left">
-            <div class="media-item"><img src="./images/achievementz sa schoolnessizeses/IMG_20260221_212431.jpg" alt="Overall Medals"></div>
-            <div class="media-item"><img src="./images/achievementz sa schoolnessizeses/Messenger_creation_DA96FC1A-D41A-4920-9C3D-C6ACC4E0AB35.jpeg" alt="Overall Certificates"></div>
+            <div class="media-item uncropped"><img src="./images/achievementz sa schoolnessizeses/IMG_20260221_212431.jpg" alt="Overall Medals"></div>
+            <div class="media-item uncropped"><img src="./images/achievementz sa schoolnessizeses/Messenger_creation_DA96FC1A-D41A-4920-9C3D-C6ACC4E0AB35.jpeg" alt="Overall Certificates"></div>
         </div>
     </div>
 
