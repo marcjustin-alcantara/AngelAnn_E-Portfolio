@@ -77,8 +77,8 @@
         }
 
         /* Dynamic Grids based on number of images */
-        .grid-1 { grid-template-columns: 1fr; max-width: 450px; width: 100%; } /* Prevents single images from becoming giants */
-        .grid-2 { grid-template-columns: repeat(2, 1fr); }
+        .grid-1 { grid-template-columns: 1fr; max-width: 550px; width: 100%; } /* Widened slightly to accommodate full landscape photos */
+        .grid-2 { grid-template-columns: repeat(2, 1fr); align-items: center; }
         .grid-4 { grid-template-columns: repeat(2, 1fr); }
 
         .media-item {
@@ -86,7 +86,7 @@
             border-radius: 15px;
             overflow: hidden;
             box-shadow: 0 10px 20px rgba(0,0,0,0.4);
-            aspect-ratio: 4 / 5; /* Consistent portrait look */
+            aspect-ratio: 4 / 5; /* Consistent portrait look for grid items */
             background-color: #000;
         }
 
@@ -99,15 +99,23 @@
             filter: grayscale(10%);
         }
 
-        /* THE FIX: Special class to show the entire image without ANY cropping */
+        /* THE ULTIMATE FIX: Guarantees the image shrink-wraps perfectly with ZERO cropping and ZERO background gaps */
+        .media-item.uncropped {
+            aspect-ratio: auto !important;
+            background-color: transparent !important;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+        }
+
         .media-item.uncropped img {
-            object-fit: contain;
-            background-color: var(--bg-card); /* Blends the empty space beautifully */
-            filter: grayscale(0%); /* Lets the medals shine in full color instantly */
+            height: auto !important; /* Allows the image to dictate its natural height */
+            width: 100% !important;
+            object-fit: contain !important; /* Absolute guarantee it will never crop */
+            filter: grayscale(0%); /* Lets the raw photos shine in full color instantly */
+            border-radius: 15px; /* Ensures the corners stay smooth */
         }
 
         .media-item:hover img {
-            transform: scale(1.05);
+            transform: scale(1.03); /* Slightly gentler hover zoom for uncropped items */
             filter: grayscale(0%);
         }
 
@@ -124,6 +132,9 @@
             .story-text {
                 border-left: 4px solid var(--accent) !important;
                 border-right: none !important;
+            }
+            .grid-1 {
+                max-width: 100%; /* Allows full width on mobile */
             }
         }
     </style>
@@ -164,7 +175,7 @@
             <p>Standing on that stage in Grade 3 remains one of my most cherished early memories. Receiving that achievement wasn't just about the certificate; it was about the profound pride shining in my father's eyes as he walked up to take it with me. Having him there, sharing that exact moment, made the milestone feel like a shared victory—a quiet, powerful promise that my hard work would always be supported and celebrated by the people who love me.</p>
         </div>
         <div class="story-media grid-1 slide-right">
-            <div class="media-item">
+            <div class="media-item uncropped">
                 <img src="./images/achievementz sa schoolnessizeses/Messenger_creation_C02B738A-EE97-4F79-987B-549E51361511.jpeg" alt="Grade 3 Achievement">
             </div>
         </div>
@@ -176,7 +187,7 @@
             <p>Grade 12 culminated in a moment of absolute validation. Earning those two medals—one for graduating With High Honor, and the other for my dedicated service in the Supreme Student Government—wasn't merely a guarantee of my academic capability; it was the tangible, physical payoff of a deeply personal investment. It proved that the late nights, the sacrifices, and the relentless drive were all worth it. Those medals stand as proof that when you invest in your own potential, the returns will always manifest.</p>
         </div>
         <div class="story-media grid-1 slide-left">
-            <div class="media-item">
+            <div class="media-item uncropped">
                 <img src="./images/achievementz sa schoolnessizeses/IMG_20240616_070659_033.jpg" alt="Senior High Medals">
             </div>
         </div>
